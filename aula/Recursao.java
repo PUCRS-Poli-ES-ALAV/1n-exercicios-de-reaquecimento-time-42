@@ -3,7 +3,7 @@ package aula;
 public class Recursao {
 
     public Recursao() {
-        System.out.println(produtoVetor(new int[]{1,2,3,4,5,6,7},7));
+        System.out.println(inverte("abc",3));
     }
 
     public int multi(int a, int b) {//apenas para numeros > 0
@@ -72,6 +72,13 @@ public class Recursao {
     public int produtoVetor(int[] vetor, int tamanho){
         if (tamanho == 1) return vetor[0];
         return vetor[tamanho-1] * produtoVetor(vetor,tamanho-1);
+    }
+
+    public String inverte(String a, int tamanho){
+        if (tamanho == 1) {
+            return String.valueOf(a.charAt(0));
+        }
+        return String.valueOf(a.charAt(tamanho-1)) + inverte(a,tamanho-1);
     }
 
 }
